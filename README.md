@@ -107,7 +107,11 @@ Reference: https://hub.docker.com/_/redis
 ---
 
 ## How to Test
-Use curl or browser:
+After starting both the Redis container and the Spring Boot application, you can verify that the application is properly connected to Redis by storing and retrieving data.
+
+### Store a value in Redis
+
+Use the following command to store a key-value pair (`name=devtkms`) in Redis via the `/set` endpoint:
 ```bash
 curl "http://localhost:8080/set?key=name&value=devtkms"
 ```
@@ -116,6 +120,8 @@ Response:
 saved!
 ```
 
+### Retrieve the value from Redis
+Use the following command to retrieve the previously stored value using the /get endpoint:
 ```bash
 curl "http://localhost:8080/get?key=name"
 ```
@@ -124,7 +130,8 @@ Response:
 devtkms
 ```
 
-Console Logs:
+### Console Logs:
+You should also see logs like this in the application console:
 ```
 Saving key: name, value: devtkms
 Retrieving key: name, value: devtkms
