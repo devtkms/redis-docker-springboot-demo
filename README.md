@@ -80,6 +80,7 @@ Create `src/main/resources/application.properties` and add:
 spring.application.name=redis-docker-springboot-demo
 spring.data.redis.host=localhost
 spring.data.redis.port=6379
+```
 
 And add the dependency:
 ```groovy
